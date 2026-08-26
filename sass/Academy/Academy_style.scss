@@ -1,0 +1,501 @@
+@import'./academy_variable';
+//and now we can use cairo font for the headings
+h1,h2,h3,h4,h5,h6{
+    font-family: $font-primary;
+}
+p,li{
+	font-family: $font-regular;
+}
+@include htags();
+a{
+    text-decoration: none;
+}
+.site{
+    overflow: hidden;
+}
+.site-header{//  includes site-branding and main-navigation
+    display: flex;// flexbox layout it doesnt need to be floated
+    margin: 0 auto;
+    align-items: center;
+
+    .site-branding{// includes site-title and site-description
+        font-family: $font-primary;
+        margin: auto 1.6rem;
+       // float: left;
+        display: flex;//it means that the site-title and site-description by defult will be in a row
+        align-items: center;
+        a{
+            text-decoration: none;
+        }
+    }//end of site-branding
+    
+      .site-title,
+      .site-description{
+        white-space: nowrap;//to prevent the text from wrapping to the next line
+      //  flex-direction: column;
+        margin: 0.5rem;
+    }
+    .site-description{
+        //float: right;
+        padding: .5rem;
+        font-style: italic;
+        //vertical-align: bottom;
+    }
+//end of the .site-branding
+// this part of the code is for the main-navigation which includes the menu-toggle and the primary-menu and does not cover the second level of the sub menu
+ /*   .main-navigation {
+    margin-left: auto;
+    text-align: end;
+
+    .menu-toggle {
+    display: none;
+}
+    #primary-menu {
+        margin: 0;
+        padding: 0;
+    }
+
+    .nav-menu {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+
+        margin: 0;
+        padding: 0;
+
+        list-style: none;
+    }
+
+    // Main menu items
+    .nav-menu > li {
+        position: relative;
+
+        margin: 0;
+        padding: 0.4rem;
+
+        text-align: center;
+
+        font-family: $font-primary;
+        font-size: $font-size * 0.7;
+
+        list-style: none;
+
+        a {
+            text-decoration: none;
+        }
+    }
+
+    // Sub menu
+    .nav-menu .children {
+    list-style: none;
+}
+    .nav-menu > li > .children {//ul li ul
+        position: absolute;
+
+        top: 100%;
+        right: 0;
+
+        min-width: 250px;
+
+        margin: 0;
+        padding: 0.5rem 0;
+
+        list-style: none;
+
+        background-color: #fff;
+
+        text-align: right;
+
+        box-shadow: 0 3px 5px #ccc;
+
+        visibility: hidden;
+        opacity: 0;
+
+        transition:
+            opacity 0.3s ease,
+            visibility 0.3s ease;
+ 
+        z-index: 999;
+    }
+
+    // Sub menu items
+    .nav-menu > li > .children > li {
+        display: block;
+
+        width: 100%;
+
+        margin: 0;
+        padding: 0;
+
+        list-style: none;
+
+        a {
+            display: block;
+
+            padding: 0.6rem 1rem;
+
+            text-decoration: none;
+        }
+    }
+
+    // Show sub menu
+    .nav-menu > li:hover > .children,
+    .nav-menu > li:focus-within > .children {
+        visibility: visible;
+        opacity: 1;
+    }
+}
+  /*  .main-navigation{
+        margin-left: auto;
+        text-align: end;
+    }
+
+
+  
+    .menu,.sub-menu{
+        padding: 0;
+        margin: 0;
+}
+
+.nav-menu {
+    display: flex;
+    align-items: center;
+    gap: 1rem;}
+        #primary-menu{
+            display: inline-block;
+           // align-items: center;
+         //   width: 100%;
+        }/*
+//-------------
+// the end of the part that does not cover the second level of the sub menu
+
+   */    
+//----------------
+//----------this part of the code is for the second level of the sub menu
+.main-navigation {
+    margin-left: auto;
+    text-align: end;
+
+    // 🟢 جديد
+    .menu-toggle {
+        display: none;
+    }
+
+    // 🟢 جديد
+    #primary-menu {
+        margin: 0;
+        padding: 0;
+    }
+
+    // 🟡 كان موجودًا عندك، لكن قمنا بتنظيمه هنا
+    .nav-menu {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+
+        margin: 0;
+        padding: 0;
+
+        // 🟢 مهم جدًا: إضافة إزالة النقاط
+        list-style: none;
+    }
+
+    // 🟡 كان عندك قريب منه
+    // لكن أصبح يستهدف عناصر القائمة الرئيسية فقط
+    .nav-menu > li {
+        position: relative;
+
+        margin: 0;
+        padding: 0.4rem;
+
+        text-align: center;
+
+        font-family: $font-primary;
+        font-size: $font-size * 0.7;
+
+        // 🟢 جديد
+        list-style: none;
+
+        a {
+            text-decoration: none;
+        }
+    }
+
+    // 🟢🟢🟢 أهم إضافة
+    // هذه القاعدة تعالج جميع القوائم الفرعية
+    .nav-menu .children {
+        position: absolute;
+
+        min-width: 250px;
+
+        margin: 0;
+        padding: 0;
+
+        // 🟢 مهم جدًا
+        // يمنع ظهور النقاط في القوائم الفرعية
+        list-style: none;
+
+        background-color: #fff;
+
+        box-shadow: 0 3px 5px #ccc;
+
+        visibility: hidden;
+        opacity: 0;
+
+        transition:
+            opacity 0.3s ease,
+            visibility 0.3s ease;
+
+        // 🟢 كان موجودًا عندك في الكود القديم
+        z-index: 999;
+    }
+
+    // 🟢 جديد
+    // تحديد مكان القائمة الفرعية الأولى
+    .nav-menu > li > .children {
+        top: 100%;
+        right: 0;
+    }
+
+    // 🟢🟢🟢 أهم إضافة ثانية
+    // معالجة القائمة الموجودة داخل قائمة فرعية
+    .nav-menu .children .children {
+        top: 0;
+        right: 100%;
+    }
+
+    // 🟢 جديد / أو تطوير للكود السابق
+    // عناصر القائمة الفرعية
+    .nav-menu .children > li {
+        display: block;
+
+        width: 100%;
+
+        margin: 0;
+        padding: 0;
+
+        list-style: none;
+
+        // 🟢 مهم للمستويات المتداخلة
+        position: relative;
+
+        a {
+            display: block;
+
+            padding: 0.6rem 1rem;
+
+            text-decoration: none;
+
+            white-space: nowrap;
+        }
+    }
+
+    // 🟢🟢🟢 مهم
+    // إظهار القائمة عندما نمرر الماوس
+    .nav-menu li:hover > .children,
+    .nav-menu li:focus-within > .children {
+        visibility: visible;
+        opacity: 1;
+    }
+}
+}
+
+/*
+*
+Header Responsive Design
+*
+*/ 
+@media (max-width: $x-large) {
+
+    @include htags(0.8rem);
+
+    /*
+    .site-header {
+        flex-direction: column;
+        align-items: center;
+    }
+    */
+
+    .site-branding {
+        margin: auto 1.4rem;
+    }
+
+    .site-title {
+        font-size: 1.8rem;
+    }
+
+    .site-title,
+    .site-description {
+        margin: 0.5rem;
+    }
+
+    .site-description {
+        padding: 0.5rem;
+    }
+
+    .main-navigation {
+        margin: 0.5rem;
+    }
+
+    .site-header .main-navigation {
+
+        margin: auto 0.9rem;
+
+        li {
+            margin: 0.2rem;
+            font-size: $font-size * 0.6;
+        }
+
+        li li {
+            width: 9rem;
+        }
+    }
+}
+
+
+@media (max-width: $large) {
+
+    @include htags(0.8rem);
+
+    /*
+    .site-header {
+        flex-direction: column;
+        align-items: center;
+    }
+    */
+
+    .site-branding {
+        margin: auto 1.2rem;
+    }
+
+    .site-title {
+        font-size: 1.6rem;
+    }
+
+    .site-title,
+    .site-description {
+        margin: 0.3rem;
+    }
+
+    .site-description {
+        padding: 0.3rem;
+    }
+
+    .main-navigation {
+        margin: auto 0.8rem;
+
+        li li {
+            width: 8rem;
+        }
+    }
+}
+
+
+@media (max-width: $medium) {
+
+    @include htags(0.6rem);
+
+    /*
+    .site-header {
+        flex-direction: column;
+        align-items: center;
+    }
+    */
+
+    .site-branding {
+        margin: auto 1rem;
+    }
+
+    .site-title {
+        font-size: 1.4rem;
+        margin: 0.3rem;
+    }
+
+    .site-description {
+        display: none;
+    }
+
+    .site-header {
+
+        li {
+            font-size: $font-size * 0.7;
+        }
+
+        ul ul {
+            position: relative;
+            float: none;
+            width: 100%;
+            background-color: #fff;
+
+            li {
+                background-color: #fff;
+                color: $color-primary;
+
+                a {
+                    background-color: #fff;
+                    color: $color-primary;
+                }
+            }
+        }
+    }
+
+    ul li:hover > ul,
+    ul li:focus-within > ul,
+    ul li ul:hover {
+
+        border-bottom: 1px solid $color-primary;
+
+        li {
+            display: block;
+            width: 100%;
+        }
+    }
+}
+@media (max-width: $small) {
+
+    .site-branding {
+        margin: auto 0.8rem;
+    }
+
+    .site-title {
+        font-size: 1.2rem;
+        margin: 0.3rem;
+    }
+
+    .main-navigation {
+        margin: auto 0.6rem;
+
+        ul ul {
+            width: 7rem;
+
+            ul {
+                right: 7rem;
+            }
+        }
+
+        li {
+            font-size: $font-size * 0.6;
+            padding: 0.2rem;
+            margin: 0.2rem;
+
+            li {
+                width: 7rem;
+            }
+        }
+    }
+}
+
+
+@media (max-width: $x-small) {
+
+    @include htags(0.5rem);
+
+    .site-branding {
+        margin: auto 0.8rem;
+    }
+
+    .site-title {
+        font-size: 1rem;
+        margin: 0.3rem;
+    }
+}

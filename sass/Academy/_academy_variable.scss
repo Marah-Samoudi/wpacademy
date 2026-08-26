@@ -1,0 +1,49 @@
+/*
+*Academy Fonts 
+*
+*/
+//@import url(https://fonts.googleapis.com/css2?family=Cairo:wght@200..1000&display=swap);
+$font-primary:Cairo,sans-serif;
+@font-face {
+    font-family: "Noto Kufi Regular";
+    src: url(fonts/static/NotoKufiArabic-Regular.ttf)format("truetype");
+}
+@font-face {
+    font-family: "Noto Kufi Bold";
+    src: url(fonts/static/NotoKufiArabic-Bold.ttf)format("truetype");
+}
+$font-regular:"Noto Kufi Regular","open sans",Arial;
+$font-Bold:"Noto Kufi Bold","open sans",Arial;
+$font-size:1.6rem;
+
+@mixin htags($factor:1rem){
+    h1{
+        font-size: 2*$factor;
+    }
+
+    h2{
+        font-size: 1.6*$factor;
+    }
+    h3{
+        font-size: 1.2*$factor;
+    }
+    h4{
+        font-size: 1.1*$factor;
+    }h5{
+        font-size: $factor;
+    }h6{
+        font-size: 0.9*$factor;
+    }
+}
+/*
+*
+Header Responsive Design
+*
+*/  
+$x-large: 1200px;
+$large: 1024px;
+$medium: 950px;
+$small: 768px;
+$x-small: 480px;
+$color-primary :#616571;
+
