@@ -499,3 +499,356 @@ Header Responsive Design
         margin: 0.3rem;
     }
 }
+
+/*
+*design for the content area and the sidebar
+*/  
+
+.content-area{
+    display: grid;
+    grid-template-columns: auto auto auto;
+    gap:10px;
+    }
+
+    .site-main{
+        float: left;
+        grid-column-start: 1;
+        grid-column-end: 3;
+        padding:2rem;
+    }
+ 
+    .widget-area{
+        float: right;
+        padding:2rem;
+        padding-top: 3rem;
+        overflow:hidden;
+        word-break: normal;
+        word-wrap: normal;
+    }
+
+    .no-sidebar{
+        .site-main{
+            grid-column-start: 1;
+            grid-column-end: 4;
+            float: none;
+            padding: 2rem;
+        }
+    }
+
+     .entry-header,.entry-footer{
+        text-align: center;
+     }
+    .entry-footer{
+        span{
+            display: inline-block;
+            margin-right: 1rem;
+            font-family: font-regular;
+
+        }
+    }
+
+    .entry-meta{
+        margin-bottom: 1rem;
+        font-family: $font-Bold;
+    }
+    /**
+    *borders and padding for content area and sidebar
+    */  
+    .post{
+        word-break:break-word;
+     
+        border: 1px solid $color-border;
+ 
+    p,pre,ul,ol,code,h1,h2,h3,h4,h5,h6,li,em,strong,span{
+        unicode-bidi: embed;}
+        a{
+            unicode-bidi: isolate
+        }
+
+
+    }   
+
+    .site-content{
+        word-wrap:break-word;
+    }
+
+    .widget{
+        padding:1rem;
+        border-bottom:0.2rem solid $color-border;
+
+        ul{
+            margin  :0;
+            padding :1rem;
+            list-style:none;
+     
+
+        li{
+            padding-top:0.5rem;
+        } 
+    }
+    }
+    // if the article contains a picture it will take the following class;
+    .has-post-thumbnail{
+        text-align: center;
+        p{
+            text-align: left;
+        }
+
+        .entry-content{
+    figure{
+            text-align: center;
+    }
+        }
+    }
+
+    // ضبط تنسيق الاقتباس لوضع هامش داخلي 
+    blockquote{
+        padding: 1rem;
+        border-left: 0.3rem solid $color-border;
+    }
+    //  if we have a code element in the article it will take the following class;
+    code{
+    
+        background-color: $color-border;
+       unicode-bidi: plaintext;
+      
+    }
+    .comment{
+        padding: 1rem;
+        border: 1px solid $color-border;    
+        line-height: normal;
+        background-color: #f9f9f9;
+        box-shadow: inset 0 0.2rem $color-border;
+
+        li>ol{
+            margin:0;
+        }
+    }
+    
+    .format-image{
+        text-align: center;
+    }
+
+    //  اضافه هامش للقائمه الموجوده ضمن عناصر الواجهه من خلال تحديد الصنف  widget ul
+    .widget ul{
+        margin: 0.5rem ;
+    }
+    //  في حال لدينا صصوره في ترويسة القالب
+    .header-image img{
+        width: 100%;
+        height: 100%;
+     }
+
+     // desinig the bootom that allow us to move btwn the pages of the post
+     .nav-previous{
+        float: left;
+        width: 50%;
+
+     }
+     .nav-next{
+        float: right;
+        width: 50%;
+     }
+
+     /** and now we will design the footer of the site and put it in the center */
+     .site-footer{
+        text-align: center;
+        margin-top: 1rem;
+        font-family: $font-Bold;
+        
+    }
+    .site-info{
+        padding:0.5 rem;
+    }
+    /**
+    **responsive design for the content area and the sidebar
+    */                  
+    @media(max-width:$x-large){
+        .site-main{
+       padding:1rem;
+        }
+        .widget-area{
+            padding:1rem;
+            padding-top: 1.5rem;
+        }
+        .no-sidebar{
+            .site-main{
+                padding: 1rem;
+            }
+        }
+
+    entry-footer{
+        span{
+           padding:0.5rem;
+        }       
+    }
+.entry-meta{
+    margin-bottom: 0.5rem;
+}
+.widget{
+    padding:0.5rem; 
+    }
+    .backquote{
+        padding: 0.5rem;
+    }
+    .comment{
+        padding: 0.5rem;
+
+        ul,ol{
+            margin:0 1rem 0.5rem 0;
+        }
+        li>ol,li>ul{
+            margin:auto;
+        }
+    }
+}//end of the media query for x-large screen
+
+
+   @media(max-width:$large){
+        .site-main{
+       padding: 0.9rem;
+        }
+       .widget-area{
+            padding:0.5rem;
+            padding-top: 1.3rem;
+        }
+       
+
+    entry-footer{
+        span{
+           padding:0.4rem;
+        }       
+    }
+.entry-meta{
+    margin-bottom: 0.4rem;
+}
+.post{
+    padding:0.4rem;
+}
+.widget{
+    padding:0.4rem; 
+    }
+    .backquote{
+        padding: 0.4rem;
+    }
+    .comment{
+        padding: 0.4rem;
+
+        ul,ol{
+            margin:0 0.9rem 0.4rem 0;
+        }
+        
+    }
+}
+   //end of the media query for large 
+   
+      @media(max-width:$medium){
+        .site-main,.widget-area{
+       @include htags(1rem);
+        }
+
+        .site-main{
+            grid-column-start: 1;
+            grid-column-end: 4;
+            float: none;
+            padding: 0.9rem;
+        }
+
+       .widget-area{
+        grid-column-start: 1;
+        grid-column-end: 4;
+        float: none;
+        text-align: left;
+            padding:0.9rem;
+            padding-top: 1.3rem;
+        }
+
+        .site-footer{
+            font-size: $font-size*0.5;
+        }
+        
+
+    .comment{
+        $font-size: $font-size*0.5;
+
+
+        ul,ol{
+            margin:0 0.5rem 0.1rem 0;
+    }
+    }}//end of the media query for medium screen
+
+    @media(max-width:$medium){
+        .site-main,.widget-area{
+       @include htags(0.8rem);
+        }
+
+        .site-main{
+            padding: 0.8rem;
+        }
+
+       .widget-area{
+            padding:0.8rem;
+            padding-top: 1.2rem;
+        }
+
+        .site-footer{
+            font-size: $font-size*0.4;
+        }
+        
+
+    .comment{
+        $font-size: $font-size*0.4;
+
+
+        ul,ol{
+            margin:0 0.4rem 0.1rem 0;
+    }
+    }}//end of the media query for small screen
+  @media(max-width:$medium){
+        .site-main,.widget-area{
+       @include htags(0.6rem);
+        }
+
+        .site-main{
+            padding: 0.5rem;
+            font-size: $font-size*0.6;
+        }
+
+       .widget-area{
+            padding: 0.5rem;
+            padding-top: 0.9rem;
+            font-size: $font-size*0.6;
+        }
+      .entry-footer ,.entry-meta{
+            font-size: $font-size*0.4;
+            a{
+                font-size: $font-size*0.4;
+                    }
+      }
+        .site-footer{
+            font-size: $font-size*0.4;
+        }
+        
+    ol.comment-list{
+        margin:0;
+        padding:0;
+    }
+    .comment{
+        $font-size: $font-size*0.4;
+
+
+        ul,ol{
+            margin:0 ;
+            padding:0;
+
+        }
+             li>ol,li>ul{
+                margin:0;
+    }
+} //comment
+
+.widget ul{
+    margin:0;
+}
+   }
+

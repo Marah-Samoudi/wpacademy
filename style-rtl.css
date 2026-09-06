@@ -1401,7 +1401,7 @@ Header Responsive Design
 	}
 
 	.main-navigation ul ul {
-		width: 7 rem;
+		width: 7rem;
 	}
 
 	.main-navigation ul ul ul {
@@ -1415,7 +1415,7 @@ Header Responsive Design
 	}
 
 	.main-navigation li li {
-		width: 7 rem;
+		width: 7rem;
 	}
 }
 
@@ -1452,6 +1452,448 @@ Header Responsive Design
 	.site-title {
 		font-size: 1rem;
 		margin: 0.3rem;
+	}
+}
+
+/*
+*design for the content area and the sidebar
+*/
+.content-area {
+	display: grid;
+	grid-template-columns: auto auto auto;
+	gap: 10px;
+}
+
+.site-main {
+	float: right;
+	grid-column-start: 1;
+	grid-column-end: 3;
+	padding: 2rem;
+}
+
+.widget-area {
+	float: left;
+	padding: 2rem;
+	padding-top: 3rem;
+	overflow: hidden;
+	word-break: normal;
+	word-wrap: normal;
+}
+
+.no-sidebar .site-main {
+	grid-column-start: 1;
+	grid-column-end: 4;
+	float: none;
+	padding: 2rem;
+}
+
+.entry-header,
+.entry-footer {
+	text-align: center;
+}
+
+.entry-footer span {
+	display: inline-block;
+	margin-left: 1rem;
+	font-family: font-regular;
+}
+
+.entry-meta {
+	margin-bottom: 1rem;
+	font-family: "Noto Kufi Bold", "open sans", Arial;
+}
+
+/**
+    *borders and padding for content area and sidebar
+    */
+.post {
+	word-break: break-word;
+	border: 1px solid #f2f2f2;
+}
+
+.post p,
+.post pre,
+.post ul,
+.post ol,
+.post code,
+.post h1,
+.post h2,
+.post h3,
+.post h4,
+.post h5,
+.post h6,
+.post li,
+.post em,
+.post strong,
+.post span {
+	unicode-bidi: embed;
+}
+
+.post a {
+	unicode-bidi: isolate;
+}
+
+.site-content {
+	word-wrap: break-word;
+}
+
+.widget {
+	padding: 1rem;
+	border-bottom: 0.2rem solid #f2f2f2;
+}
+
+.widget ul {
+	margin: 0;
+	padding: 1rem;
+	list-style: none;
+}
+
+.widget ul li {
+	padding-top: 0.5rem;
+}
+
+.has-post-thumbnail {
+	text-align: center;
+}
+
+.has-post-thumbnail p {
+	text-align: right;
+}
+
+.has-post-thumbnail .entry-content figure {
+	text-align: center;
+}
+
+blockquote {
+	padding: 1rem;
+	border-right: 0.3rem solid #f2f2f2;
+}
+
+code {
+	background-color: #f2f2f2;
+	unicode-bidi: plaintext;
+}
+
+.comment {
+	padding: 1rem;
+	border: 1px solid #f2f2f2;
+	line-height: normal;
+	background-color: #f9f9f9;
+	box-shadow: inset 0 0.2rem #f2f2f2;
+}
+
+.comment li > ol {
+	margin: 0;
+}
+
+.format-image {
+	text-align: center;
+}
+
+.widget ul {
+	margin: 0.5rem;
+}
+
+.header-image img {
+	width: 100%;
+	height: 100%;
+}
+
+.nav-previous {
+	float: right;
+	width: 50%;
+}
+
+.nav-next {
+	float: left;
+	width: 50%;
+}
+
+/** and now we will design the footer of the site and put it in the center */
+.site-footer {
+	text-align: center;
+	margin-top: 1rem;
+	font-family: "Noto Kufi Bold", "open sans", Arial;
+}
+
+.site-info {
+	padding: 0.5 rem;
+}
+
+/**
+    **responsive design for the content area and the sidebar
+    */
+@media (max-width: 1200px) {
+
+	.site-main {
+		padding: 1rem;
+	}
+
+	.widget-area {
+		padding: 1rem;
+		padding-top: 1.5rem;
+	}
+
+	.no-sidebar .site-main {
+		padding: 1rem;
+	}
+
+	entry-footer span {
+		padding: 0.5rem;
+	}
+
+	.entry-meta {
+		margin-bottom: 0.5rem;
+	}
+
+	.widget {
+		padding: 0.5rem;
+	}
+
+	.backquote {
+		padding: 0.5rem;
+	}
+
+	.comment {
+		padding: 0.5rem;
+	}
+
+	.comment ul,
+	.comment ol {
+		margin: 0 0 0.5rem 1rem;
+	}
+
+	.comment li > ol,
+	.comment li > ul {
+		margin: auto;
+	}
+}
+
+@media (max-width: 1024px) {
+
+	.site-main {
+		padding: 0.9rem;
+	}
+
+	.widget-area {
+		padding: 0.5rem;
+		padding-top: 1.3rem;
+	}
+
+	entry-footer span {
+		padding: 0.4rem;
+	}
+
+	.entry-meta {
+		margin-bottom: 0.4rem;
+	}
+
+	.post {
+		padding: 0.4rem;
+	}
+
+	.widget {
+		padding: 0.4rem;
+	}
+
+	.backquote {
+		padding: 0.4rem;
+	}
+
+	.comment {
+		padding: 0.4rem;
+	}
+
+	.comment ul,
+	.comment ol {
+		margin: 0 0 0.4rem 0.9rem;
+	}
+}
+
+@media (max-width: 950px) {
+
+	.site-main h1,
+	.widget-area h1 {
+		font-size: 2rem;
+	}
+
+	.site-main h2,
+	.widget-area h2 {
+		font-size: 1.6rem;
+	}
+
+	.site-main h3,
+	.widget-area h3 {
+		font-size: 1.2rem;
+	}
+
+	.site-main h4,
+	.widget-area h4 {
+		font-size: 1.1rem;
+	}
+
+	.site-main h5,
+	.widget-area h5 {
+		font-size: 1rem;
+	}
+
+	.site-main h6,
+	.widget-area h6 {
+		font-size: 0.9rem;
+	}
+
+	.site-main {
+		grid-column-start: 1;
+		grid-column-end: 4;
+		float: none;
+		padding: 0.9rem;
+	}
+
+	.widget-area {
+		grid-column-start: 1;
+		grid-column-end: 4;
+		float: none;
+		text-align: right;
+		padding: 0.9rem;
+		padding-top: 1.3rem;
+	}
+
+	.site-footer {
+		font-size: 0.8rem;
+	}
+
+	.comment ul,
+	.comment ol {
+		margin: 0 0 0.1rem 0.5rem;
+	}
+}
+
+@media (max-width: 950px) {
+
+	.site-main h1,
+	.widget-area h1 {
+		font-size: 1.6rem;
+	}
+
+	.site-main h2,
+	.widget-area h2 {
+		font-size: 1.28rem;
+	}
+
+	.site-main h3,
+	.widget-area h3 {
+		font-size: 0.96rem;
+	}
+
+	.site-main h4,
+	.widget-area h4 {
+		font-size: 0.88rem;
+	}
+
+	.site-main h5,
+	.widget-area h5 {
+		font-size: 0.8rem;
+	}
+
+	.site-main h6,
+	.widget-area h6 {
+		font-size: 0.72rem;
+	}
+
+	.site-main {
+		padding: 0.8rem;
+	}
+
+	.widget-area {
+		padding: 0.8rem;
+		padding-top: 1.2rem;
+	}
+
+	.site-footer {
+		font-size: 0.64rem;
+	}
+
+	.comment ul,
+	.comment ol {
+		margin: 0 0 0.1rem 0.4rem;
+	}
+}
+
+@media (max-width: 950px) {
+
+	.site-main h1,
+	.widget-area h1 {
+		font-size: 1.2rem;
+	}
+
+	.site-main h2,
+	.widget-area h2 {
+		font-size: 0.96rem;
+	}
+
+	.site-main h3,
+	.widget-area h3 {
+		font-size: 0.72rem;
+	}
+
+	.site-main h4,
+	.widget-area h4 {
+		font-size: 0.66rem;
+	}
+
+	.site-main h5,
+	.widget-area h5 {
+		font-size: 0.6rem;
+	}
+
+	.site-main h6,
+	.widget-area h6 {
+		font-size: 0.54rem;
+	}
+
+	.site-main {
+		padding: 0.5rem;
+		font-size: 0.96rem;
+	}
+
+	.widget-area {
+		padding: 0.5rem;
+		padding-top: 0.9rem;
+		font-size: 0.96rem;
+	}
+
+	.entry-footer,
+	.entry-meta {
+		font-size: 0.64rem;
+	}
+
+	.entry-footer a,
+	.entry-meta a {
+		font-size: 0.64rem;
+	}
+
+	.site-footer {
+		font-size: 0.64rem;
+	}
+
+	ol.comment-list {
+		margin: 0;
+		padding: 0;
+	}
+
+	.comment ul,
+	.comment ol {
+		margin: 0;
+		padding: 0;
+	}
+
+	.comment li > ol,
+	.comment li > ul {
+		margin: 0;
+	}
+
+	.widget ul {
+		margin: 0;
 	}
 }
 
