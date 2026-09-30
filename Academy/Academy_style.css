@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /*
 *Academy Fonts 
 *
@@ -539,7 +540,7 @@ code {
     padding-top: 1.5rem; }
   .no-sidebar .site-main {
     padding: 1rem; }
-  entry-footer span {
+  .entry-footer span {
     padding: 0.5rem; }
   .entry-meta {
     margin-bottom: 0.5rem; }
@@ -605,7 +606,7 @@ code {
   .comment ul, .comment ol {
     margin: 0 0.5rem 0.1rem 0; } }
 
-@media (max-width: 950px) {
+@media (max-width: 768px) {
   .site-main h1, .widget-area h1 {
     font-size: 1.6rem; }
   .site-main h2, .widget-area h2 {
@@ -628,7 +629,7 @@ code {
   .comment ul, .comment ol {
     margin: 0 0.4rem 0.1rem 0; } }
 
-@media (max-width: 950px) {
+@media (max-width: 480px) {
   .site-main h1, .widget-area h1 {
     font-size: 1.2rem; }
   .site-main h2, .widget-area h2 {
@@ -664,3 +665,193 @@ code {
     margin: 0; }
   .widget ul {
     margin: 0; } }
+
+/**
+*site colors
+*/
+.site-header, .site-footer {
+  background-color: #616571; }
+
+.site-main, .widget-area {
+  background-color: #fff; }
+
+.site-header a, .site-header a:visited, .site-header a:hover {
+  color: #fff; }
+
+.site-title, .site-description {
+  color: #fff; }
+  .site-title a, .site-description a {
+    color: #fff; }
+
+.main-navigation li:hover, .main-navigation li:focus, .main-navigation li:hover > a, .main-navigation li:focus > a {
+  color: #E43f21;
+  pointer-events: initial; }
+
+.main-navigation li ul li ul {
+  background-color: #fff; }
+
+.main-navigation li li a {
+  color: #616571 !important; }
+  .main-navigation li li a:hover {
+    color: #E43f21 !important;
+    border-left: 2px solid #E43f21; }
+
+.site-main a, .site-main a:visited, .site-main a:hover, widget-area a, widget-area a:visited, widget-area a:hover {
+  color: #616571; }
+
+.site-main h1, .site-main h2, .site-main h3, .site-main h4, .site-main h5, .site-main h6, widget-area h1, widget-area h2, widget-area h3, widget-area h4, widget-area h5, widget-area h6 {
+  color: #616171; }
+
+p {
+  color: #666; }
+
+.entry-meta span {
+  background-color: #f1f6f8;
+  color: #616571; }
+
+.entry-meta a, .entry-meta a:hover {
+  color: #E43f21; }
+
+.entry-footer {
+  border-bottom: 0.2rem solid #f2f2f2; }
+  .entry-footer span {
+    border-top: 0.2rem solid #f2f2f2; }
+
+.site-info {
+  color: #fff; }
+
+/**
+*site icons
+**/
+/**
+ * Site icons
+ */
+.menu-item-has-children::after,
+.page_item_has_children::after {
+  font-family: "Font Awesome 5 Free";
+  content: "\f0d7";
+  margin: 0.2rem;
+  position: absolute;
+  right: -20px;
+  vertical-align: middle;
+  color: #fff;
+  top: 50%;
+  transform: translateY(-50%);
+  font-weight: 900; }
+
+/* In case we have a sub menu within a sub menu */
+.page_item_has_children .menu-item-has-children::after,
+.page_item_has_children .page_item_has_children::after {
+  right: 20px;
+  color: #fff;
+  font-weight: 900; }
+
+.page_item_has_children:hover,
+.menu-item-has-children:hover {
+  cursor: pointer; }
+  .page_item_has_children:hover::after,
+  .menu-item-has-children:hover::after {
+    color: #E43f21 !important; }
+
+/*
+**edit link but the edit link is not available for the visitors and only for the admin
+*/
+edit-link a::before {
+  unicode-bidi: isolate;
+  color: #E43f21;
+  font-family: "Font Awesome 5 Free";
+  content: "\f044";
+  margin: 0.2rem; }
+
+/**
+**add an for comment and a icon for replaying to the comment
+*/
+.comment-link a::before {
+  unicode-bidi: isolate;
+  font-family: "Font Awesome 5 Free";
+  content: "\f075";
+  margin: 0.2rem; }
+
+.reply a::before {
+  unicode-bidi: isolate;
+  font-family: "Font Awesome 5 Free";
+  content: "\f064";
+  margin: 0.2rem; }
+
+/**
+**to acsess the pages inside the post   
+*/
+.tags-links a::before {
+  unicode-bidi: isolate;
+  font-family: "Font Awesome 5 Free";
+  content: "\f02c";
+  margin: 0.2rem; }
+
+/**
+**to acsess the categories inside the post   
+*/
+.cat-links a::before {
+  unicode-bidi: isolate;
+  font-family: "Font Awesome 5 Free";
+  content: "\f07c";
+  margin: 0.2rem; }
+
+/***
+**الرموز التوضيحيه لعناصر روابط الواجهه ضمن الشريط الجانبي داخل widget
+***/
+.wp-block-latest-posts li:before {
+  unicode-bidi: isolate;
+  font-family: "Font Awesome 5 Free";
+  content: "\f15b";
+  margin: 0.2rem; }
+
+.wp-block-pages li:before {
+  unicode-bidi: isolate;
+  font-family: "Font Awesome 5 Free";
+  content: "\f15b";
+  margin: 0.2rem; }
+
+/***
+**this part is for the latest comments 
+***/
+.wp-block-latest-comments li article, .wp-block-latest-comments li footer {
+  display: inline; }
+
+.wp-block-latest-comments li::before {
+  unicode-bidi: isolate;
+  font-family: "Font Awesome 5 Free";
+  content: "\f075";
+  margin: 0.2rem; }
+
+.wp-block-archives li:before {
+  unicode-bidi: isolate;
+  font-family: "Font Awesome 5 Free";
+  content: "\f187";
+  margin: 0.2rem; }
+
+.wp-block-categories li:before {
+  unicode-bidi: isolate;
+  font-family: "Font Awesome 5 Free";
+  content: "\f07c";
+  margin: 0.2rem; }
+
+.widget-meta li:before {
+  unicode-bidi: isolate;
+  font-family: "Font Awesome 5 Free";
+  content: "\f0c1";
+  margin: 0.2rem; }
+
+/***
+**this part is for adding a next and previous icon 
+**/
+.nav-next a::after {
+  unicode-bidi: isolate;
+  font-family: "Font Awesome 5 Free";
+  content: "\f0a8";
+  margin: 0.2rem; }
+
+.nav-previous a::before {
+  unicode-bidi: isolate;
+  font-family: "Font Awesome 5 Free";
+  content: "\f0a9";
+  margin: 0.2rem; }

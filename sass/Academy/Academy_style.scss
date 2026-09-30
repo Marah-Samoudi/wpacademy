@@ -677,7 +677,7 @@ Header Responsive Design
             }
         }
 
-    entry-footer{
+    .entry-footer{
         span{
            padding:0.5rem;
         }       
@@ -777,7 +777,7 @@ Header Responsive Design
     }
     }}//end of the media query for medium screen
 
-    @media(max-width:$medium){
+    @media(max-width:$small){
         .site-main,.widget-area{
        @include htags(0.8rem);
         }
@@ -804,7 +804,7 @@ Header Responsive Design
             margin:0 0.4rem 0.1rem 0;
     }
     }}//end of the media query for small screen
-  @media(max-width:$medium){
+  @media(max-width:$x-small){
         .site-main,.widget-area{
        @include htags(0.6rem);
         }
@@ -851,4 +851,235 @@ Header Responsive Design
     margin:0;
 }
    }
+/**
+*site colors
+*/  
+.site-header,.site-footer{
+    background-color: $color-primary;
+   
+}
+.site-main,.widget-area{
+    background-color: #fff;
+}
+.site-header {
+    a,a:visited,a:hover{
+        color: $color-header-links; 
+    }
+}
+.site-title,.site-description{
+    color: $color-header-links;
+    a{
+        color: $color-header-links;
+    }
+}
+.main-navigation{
+   li{
+    &:hover,&:focus,&:hover>a,&:focus>a{
+        color: $color-links-hover;
+        pointer-events: initial;
+    }
+    ul li ul{
+        background-color:$color-header-links;
+    }
+    li{
+        a{
+            color: $color-primary !important;
 
+            &:hover{
+                color: $color-links-hover !important;
+                border-left:2px solid $color-links-hover;
+            }
+        }
+    }
+   }
+}
+.site-main,widget-area{
+    a,a:visited,a:hover{
+        color: $color-links;
+    }
+    h1,h2,h3,h4,h5,h6{
+        color: $color-heading;
+    }
+   
+}
+ p
+    {
+        color:$color-text;
+    }
+
+.entry-meta{
+    span{
+        background-color: #f1f6f8;
+        color:$color-links;
+    }
+    a ,a:hover{
+        color:$color-links-hover;
+    }
+ 
+}
+.entry-footer{
+    border-bottom: 0.2rem solid $color-border;
+    span{
+       border-top: 0.2rem solid $color-border;
+    }
+}
+
+.site-info{
+    color:$color-header-links;
+}
+/**
+*site icons
+**/
+/**
+ * Site icons
+ */
+
+.menu-item-has-children::after,
+.page_item_has_children::after {
+    font-family: $font-awesome;
+    content: "\f0d7";
+    margin: 0.2rem;
+    position: absolute;
+    right: -20px;
+    vertical-align: middle;
+    color: $color-header-links;
+    top: 50%;
+    transform: translateY(-50%);
+     font-weight: 900;
+}
+
+/* In case we have a sub menu within a sub menu */
+.page_item_has_children .menu-item-has-children::after,
+.page_item_has_children .page_item_has_children::after {
+    right: 20px;
+    color: $color-header-links;
+    font-weight: 900;
+}
+
+.page_item_has_children:hover,
+.menu-item-has-children:hover {
+    cursor: pointer;
+
+    &::after {
+        color: $color-links-hover !important;
+    }
+}
+/*
+**edit link but the edit link is not available for the visitors and only for the admin
+*/  
+edit-link a::before{
+    unicode-bidi: isolate;
+    color: $color-links-hover;
+    font-family: $font-awesome;
+    content: "\f044";
+    margin: 0.2rem;
+
+}
+/**
+**add an for comment and a icon for replaying to the comment
+*/
+.comment-link a::before{
+    unicode-bidi: isolate;
+    font-family: $font-awesome;
+    content: "\f075";
+    margin: 0.2rem;
+
+}
+.reply a::before{
+    unicode-bidi: isolate;
+    font-family: $font-awesome;
+    content: "\f064";
+    margin: 0.2rem;
+
+}
+/**
+**to acsess the pages inside the post   
+*/  
+.tags-links a::before{
+    unicode-bidi: isolate;
+    font-family: $font-awesome;
+    content: "\f02c";
+    margin: 0.2rem;
+
+}
+/**
+**to acsess the categories inside the post   
+*/  
+.cat-links a::before{
+    unicode-bidi: isolate;
+    font-family: $font-awesome;
+    content: "\f07c";
+    margin: 0.2rem;
+
+}
+/***
+**الرموز التوضيحيه لعناصر روابط الواجهه ضمن الشريط الجانبي داخل widget
+***/            
+.wp-block-latest-posts li:before{//.wp-block-latest-posts li a::before{
+        unicode-bidi: isolate;
+    font-family: $font-awesome;
+    content: "\f15b";
+    margin: 0.2rem;
+}
+
+.wp-block-pages li:before{
+        unicode-bidi: isolate;
+    font-family: $font-awesome;
+    content: "\f15b";
+    margin: 0.2rem;
+}
+/***
+**this part is for the latest comments 
+***/
+.wp-block-latest-comments li{
+    article,footer{
+        display:inline;
+    }
+    &::before{
+     unicode-bidi: isolate;
+    font-family: $font-awesome;
+    content: "\f075";
+    margin: 0.2rem;
+    }
+       
+}
+
+.wp-block-archives li:before{
+        unicode-bidi: isolate;
+    font-family: $font-awesome;
+    content: "\f187";
+    margin: 0.2rem;
+}
+
+.wp-block-categories li:before{
+        unicode-bidi: isolate;
+    font-family: $font-awesome;
+    content: "\f07c";
+    margin: 0.2rem;
+}
+
+.widget-meta li:before{
+        unicode-bidi: isolate;
+    font-family: $font-awesome;
+    content: "\f0c1";
+    margin: 0.2rem;
+}
+/***
+**this part is for adding a next and previous icon 
+**/
+.nav-next a::after{
+    unicode-bidi: isolate;
+    font-family: $font-awesome;
+    content: "\f0a8";
+    margin: 0.2rem;
+
+}
+
+
+.nav-previous a::before{
+    unicode-bidi: isolate;
+    font-family: $font-awesome;
+    content: "\f0a9";
+    margin: 0.2rem;
+
+}
