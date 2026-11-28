@@ -19,7 +19,7 @@ $font-Regular:'Noto Kufi Regular','open sans','Arial';
 $font-Bold:'Noto Kufi Bold', 'open sans','Arial';
 
 @mixin htags($factor:1){
-  h1{font-size:2.5* $factor *1rem;}
+  h1{font-size:2.5*$factor*1rem}
   h2{font-size:2  * $factor*1rem;}
   h3{font-size:1.75* $factor*1rem;}
   h4{font-size:1.5* $factor*1rem;}
@@ -36,3 +36,4 @@ $large:1024px;
 $medium:950px;
 $small:750px;
 $x-small:460px;
+$color-border:#f2f2f2;
